@@ -1,0 +1,45 @@
+NULL;Pediatria;1
+NULL;Medicina Interna;1
+NULL;Neonatologia;1
+NULL;Broncopulmonar ;1
+NULL;Cardiologia ;1
+NULL;Endocrinologia ;1
+NULL;Gastroenterologia ;1
+NULL;Genetica ;1
+NULL;Hematologia ;1
+NULL;Hematologia Oncologica;1
+NULL;Nefrologia ;1
+NULL;Nutricion ;1
+NULL;Reumatologia;1
+NULL;Dermatologia ;1
+NULL;Inf. Transmision Sexual (excluye VIH/SIDA);1
+NULL;VIH/SIDA;1
+NULL;Geriatria;1
+NULL;Medicina Fisica y Rehabilitacion ;1
+NULL;Neurologia ;1
+NULL;Oncologia ;1
+NULL;Psiquiatria ;1
+NULL;Infectologia ;1
+NULL;Cirugia Infantil;1
+NULL;Cirugia Adulto;1
+NULL;Cirugia Abdominal ;1
+NULL;Cirugia de Mamas (excluye Patologia Mamaria);1
+NULL;Cirugia de Mamas con Patologia Mamaria;1
+NULL;Cirugia Maxilo Facial ;1
+NULL;Cirugia Plastica ;1
+NULL;Cirugia Proctologica;1
+NULL;Cirugia Torax ;1
+NULL;Cirugia Vascular Periferica;1
+NULL;Neurocirugia ;1
+NULL;Cardiocirugia ;1
+NULL;Anestesiologia ;1
+NULL;Obstetricia ;1
+NULL;Ginecologia (excluye Patologia Cervical);1
+NULL;Ginecologia con Patologia Cervical;1
+NULL;Oftalmologia (excluye UAPO);1
+NULL;Oftalmologia en UAPO;1
+NULL;Otorrinolaringologia;1
+NULL;Salud Ocupacional;1
+NULL;Traumatologia ;1
+NULL;Urologia ;1
+NULL;Medicina Familiar;1
