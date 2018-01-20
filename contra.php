@@ -66,9 +66,9 @@ $(document).ready(function($) {
 		//Append a new row of code to the "#items" div
 		var variable = ''
 		variable = '<div class="form-group form-inline col-xs-12">'
+		variable += '<input type="text" placeholder="Cedula" class="form-control"  name="cedulas[] required value="" maxlength="11" size="11">'
 		variable += '<input type="text" placeholder="Apellidos" class="form-control"  name="apellidos[] required value="" maxlength="20" size="15">';
 		variable += '<input type="text" placeholder="Nombres" class="form-control"  name="nombres[] required value="" maxlength="20" size="15">'
-		variable += '<input type="text" placeholder="Cedula" class="form-control"  name="cedulas[] required value="" maxlength="11" size="11">'
 		variable += '<input type="text" placeholder="Nacimiento" class="form-control" id="nacio[]" name="nacio[]" required maxlength="8" size="8">'
 		variable += <?php echo "'".$elparentesco."'"; ?>
 
@@ -106,7 +106,7 @@ $(document).ready(function($) {
 	   // cache: false,
 	   success: function(resultado)
 	   {
-	   		if ($("#activo").val(resultado['activo']) == 1)
+	   		if (resultado['activo'] == 1)
 	   		{
 			    $("#dir1emp").val(resultado['direccion1']);
 			    $("#dir2emp").val(resultado['direccion2']);
@@ -117,6 +117,9 @@ $(document).ready(function($) {
 		    }
 		    else
 		    {
+			    $("#dir1emp").val('');
+			    $("#dir2emp").val('');
+			    $("#alias").val('');
 			    $('#dir1emp').prop("disabled", false);
 		    	$('#dir2emp').prop("disabled", false);
 		      	$('#alias').prop("disabled", false);
@@ -215,9 +218,9 @@ $(document).ready(function($) {
 				<fieldset>
 					<legend class="text-center btn-info">Datos de Titular</legend>
 					<div class="form-group form-inline col-xs-12">
+						<input type="text" placeholder="Cedula" class="form-control" id="cedula" name="cedula" required value="" maxlength="11" size="11"">
 						<input type="text" placeholder="Apellidos" class="form-control" id="apellido" name="apellido" required value="" maxlength="20" size="15"">
 						<input type="text" placeholder="Nombres" class="form-control" id="nombre" name="nombre" required value="" maxlength="20" size="15"">
-						<input type="text" placeholder="Cedula" class="form-control" id="cedula" name="cedula" required value="" maxlength="11" size="11"">
 						<input type="text" placeholder="Nacimiento" class="form-control" id="nace" name="nace" required maxlength="8" size="8">
 			                <script type="text/javascript">
 			                $(function() {
@@ -325,7 +328,7 @@ $(document).ready(function($) {
 					</div>
 					<div class="form-group form-inline col-xs-12">
 						<div class="input-group form-inline">
-							<input type="text" placeholder="Empresa" class="form-control" id="activo" name="activo" required value="0">
+							<input type="hidden" placeholder="Empresa" class="form-control" id="activo" name="activo" required value="0">
 							<label for="alias" class="sr-only control-label">Empresa</label>
 							<input type="text" placeholder="Empresa" class="form-control" id="alias" name="alias" required value="" maxlength="60" size="30">
 			        	</div>
@@ -341,6 +344,7 @@ $(document).ready(function($) {
 					</fieldset>
 			</div>
 		</div>
+
 <!--
 		<div class="row">
 			<div class="col-xs-11" class="text-center">

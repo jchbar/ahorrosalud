@@ -79,8 +79,8 @@ $.sessionTimeout({
         keepAliveUrl: 'keep-alive.html',
         logoutUrl: 'index.php',
         redirUrl: 'locked.php',
-        warnAfter: ((5*60)*1000),  // 5 minutos
-        redirAfter: ((35+(5*60))*1000), // 
+        warnAfter: ((15*60)*1000),  // 5 minutos
+        redirAfter: ((35+(15*60))*1000), // 
         // warnAfter: (5000),  // segundos 15 
         // redirAfter: (10000), // 
         countdownBar: true,
