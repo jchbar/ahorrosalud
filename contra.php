@@ -19,9 +19,9 @@ $sql="SELECT nombre FROM `configuracion` WHERE parametro='Parentesco'";
 $stmt=$db_con->prepare($sql);
 $stmt->execute();
 // $parentesco=$stmt->fetch(PDO::FETCH_ASSOC);
-$elparentesco='<select class="form-control" name="parentesco[]" id="parentesco[]" size="1">';
+$elparentesco='<select style="width: 150px;" class="form-control" name="parentesco[]" id="parentesco[]" size="1">';
 while($row = $stmt->fetch(PDO::FETCH_ASSOC))
-	$elparentesco.='<option '.$row['nombre'].' value="'.$row['nombre'].'">'.$row['nombre'].' </option>'; 
+	$elparentesco.='<option '.$row['nombre'].' value="'.trim($row['nombre']).'">'.trim($row['nombre']).' </option>'; 
 $elparentesco.='</select>'; 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -65,7 +65,7 @@ $(document).ready(function($) {
 	$("#add").click(function (e) {
 		//Append a new row of code to the "#items" div
 		var variable = ''
-		variable = '<div class="form-group form-inline col-xs-12">'
+		variable = '<div class="form-group form-inline col-xs-11">'
 		variable += '<input type="text" placeholder="Cedula" class="form-control"  name="cedulas[] required value="" maxlength="11" size="11">'
 		variable += '<input type="text" placeholder="Apellidos" class="form-control"  name="apellidos[] required value="" maxlength="20" size="15">';
 		variable += '<input type="text" placeholder="Nombres" class="form-control"  name="nombres[] required value="" maxlength="20" size="15">'
@@ -75,7 +75,7 @@ $(document).ready(function($) {
 //////////
 //		variable +='$(function() {$(\'input[name="nacio[]"]\').daterangepicker({"singleDatePicker": true,timePicker: false,"timePicker24Hour": false,"applyLabel": "Guardar","cancelLabel": "Cancelar","fromLabel": "Desde","toLabel": "Hasta",locale: {format: "YYYY-MM-DD",daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi","Sa"],monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],customRangeLabel: "Personalizado",applyLabel: "Aplicar",fromLabel: "Desde",toLabel: "Hasta",},"startDate": "<php echo $fechas["minimo"]?>","endDate": "<php echo $fechas["hoy"]?>", "minDate": "<php echo $fechas["inicio"]?>","maxDate": "<php echo $fechas["hoy"]?>" });});'
 //////////
-		variable += '<button class="delete">Eliminar</button></div>'
+		variable += '<button class="btn btn-warning delete">Eliminar<i class="glyphicon glyphicon-trash"></i></button></div>'
 		$("#items").append(variable)
 		});
 	$("body").on("click", ".delete", function (e) {
@@ -211,16 +211,16 @@ $(document).ready(function($) {
 </script>
 <div class="body-container">
 	<form id="guardarDatos" enctype="multipart/form-data">
-		        form id="envioForm" method="post" class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded">
-	<div class="container">
+	<!--      form id="envioForm" method="post" class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded"> -->
+	<div class="ontainer">
 		<div class="row">
-			<div class="col-xs-11" class="text-center btn-inverse">
+			<div class="col-xs-12" class="text-center btn-inverse">
 				<fieldset>
 					<legend class="text-center btn-info">Datos de Titular</legend>
 					<div class="form-group form-inline col-xs-12">
 						<input type="text" placeholder="Cedula" class="form-control" id="cedula" name="cedula" required value="" maxlength="11" size="11"">
-						<input type="text" placeholder="Apellidos" class="form-control" id="apellido" name="apellido" required value="" maxlength="20" size="15"">
-						<input type="text" placeholder="Nombres" class="form-control" id="nombre" name="nombre" required value="" maxlength="20" size="15"">
+						<input type="text" placeholder="Apellidos" class="form-control" id="apellido" name="apellido" required value="" maxlength="20" size="20"">
+						<input type="text" placeholder="Nombres" class="form-control" id="nombre" name="nombre" required value="" maxlength="20" size="20"">
 						<input type="text" placeholder="Nacimiento" class="form-control" id="nace" name="nace" required maxlength="8" size="8">
 			                <script type="text/javascript">
 			                $(function() {
@@ -345,16 +345,15 @@ $(document).ready(function($) {
 			</div>
 		</div>
 
-<!--
 		<div class="row">
 			<div class="col-xs-11" class="text-center">
-				form action='contra.php?accion=Listado' name='form1' method='post' class='form-inline'>
-					<fieldset class="text-center btn-info">Datos para Beneficiarios</fieldset>
-					<br><br><br><button id="add">Agregar Beneficiario</button>
+				<!-- form action='contra.php?accion=Listado' name='form1' method='post' class='form-inline'> -->
+					<fieldset class="text-center btn-info">Datos para Beneficiarios  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; 
+					<button class="btn btn-default" id="add">Agregar Beneficiario <i class='glyphicon glyphicon-plus'></i></button></fieldset>
 					<div id="items">
 						<div class="form-group form-inline col-xs-12">
-							<div><input type="text" placeholder="Apellidos" class="form-control" id="apellidosb" name="apellidosb[] required value="" maxlength="20" size="15"">
-							<input type="text" placeholder="Nombres" class="form-control" id="nombresb" name="nombresb[] required value="" maxlength="20" size="15"">
+							<div><input type="text" placeholder="Apellidos" class="form-control" id="apellidosb" name="apellidosb[] required value="" maxlength="20" size="20"">
+							<input type="text" placeholder="Nombres" class="form-control" id="nombresb" name="nombresb[] required value="" maxlength="20" size="20"">
 							<input type="text" placeholder="Cedula" class="form-control" id="cedulasb" name="cedulasb[] required value="" maxlength="11" size="11"">
 							<input type="text" placeholder="Nacimiento" class="form-control" id="naciob[]" name="naciob[]" required maxlength="8" size="8">
 							<?php
@@ -382,7 +381,7 @@ $(document).ready(function($) {
 			                    },
 			                        "startDate": "<?php echo $fechas['minimo']?>",
 			                        "endDate": "<?php echo $fechas['hoy']?>", 
-			                        "minDate": "<?php echo $fechas['inicio']?>",
+			                    //    "minDate": "<?php echo $fechas['inicio']?>",
 			                        "maxDate": "<?php echo $fechas['hoy']?>" 
 			                    }
 			                    );
@@ -395,7 +394,7 @@ $(document).ready(function($) {
 		</div>
 	</div>
 </div>
--->
+
 				<div class="form-group"> <!-- necesario para la validacion -->
 					<div class="col-md-9 col-md-offset-3">
 						<div id="messages"></div>

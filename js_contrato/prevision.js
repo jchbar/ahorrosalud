@@ -360,7 +360,55 @@ $(document).ready(function() {
                         message: 'The content must be less than 500 characters long'
                     }
                 }
-            }
+            },
+            apellidosb: {
+                validators: {
+                    notEmpty: {
+                        message: 'El apellido es necesario y no puede estar vacio',
+                    },
+                    stringLength: {
+                        min: 3,
+                        max:20,
+                        message: 'Debe tener menos de 20 caracteres'
+                    },
+                    stringCase: {
+                        message: 'Debe colocar solo letras mayusculas',
+                        'case': 'upper'
+                    }
+                },
+            },
+            nombresb: {
+                validators: {
+                    notEmpty: {
+                        message: 'El nombre es necesario y no puede estar vacio',
+                    },
+                    stringLength: {
+                        min: 3,
+                        max: 20,
+                        message: 'Debe tener menos de 20 caracteres'
+                    },
+                    stringCase: {
+                        message: 'Debe colocar solo letras mayusculas',
+                        'case': 'upper'
+                    }
+                },
+            },
+            cedulasb: {
+                validators: {
+                    notEmpty: {
+                        message: 'La cedula no puede estar vacia'
+                    },
+                    regexp: {
+                        regexp: /^[JGCVE0-9]+$/,
+                        message: 'Puede contener solo numeros'
+                    },
+                    stringLength: {
+                        min: 0,
+                        max: 10,
+                        message: 'No debe ser mayor a 10 digitos'
+                    }
+                }
+            },
         } // fields
     }); // formulario 
 
